@@ -31,21 +31,20 @@ router.post('/register', async function(req,res){
     }
 })
 
-router.post(`/login`, async function(req,res){
+router.post('/login', async function(req,res){
     try{
         const {id,password} =req.body;
 
         const sqlGetUser = 'SELECT password FROM user WHERE id=?'
         const rows = await pool.query(sqlGetUser,id);
         if (rows){
-            res.status(200).json(rows[0]);
             const isValid = await bcrypt.compare(password,rows[0].password)
-            res.status(200).json(isValid); 
+            res.status(200).json({valid_password: isValid}); 
+        }else{
+            res.status(200).send(`User with id ${id} was not found`)
         }
-        console.log("2")
 
     }catch (error){
-        console.log("in1")
         res.status(400).send(error.message)
     }
 })
