@@ -23,7 +23,6 @@ app.get('/', (request, response) =>{
     response.status(200).send("This is not why you`re here. Head to /user/:id and replace :id with your user id")  
 })
 
-
 app.use('/user', router);
 
 /**Start listening */
