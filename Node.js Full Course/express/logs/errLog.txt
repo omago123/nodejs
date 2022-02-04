@@ -1,1 +1,2 @@
 20220202	22:59:13	e292e9aa-7e55-45f6-8ee4-c4e4aac541cd	TypeError	fsPromises.readFil is not a function
+20220204	22:58:24	4e4d504d-c37b-42fa-a7bf-f7ee59b7f60f	SyntaxError: Unexpected token } in JSON at position 6
