@@ -47,6 +47,7 @@ app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
 
 
+//verifyJWT에서 next()때문에  /employees의 모든 request는 verifyJWT를 거치게 된다.
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
 
